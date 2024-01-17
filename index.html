@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-T2Q8KG0LGD"></script>
+    <script >
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-T2Q8KG0LGD");
+    </script> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>last repositories</title>
+    <style>
+        
+        body{
+            display: grid;
+            place-content: center;
+            text-align: center;
+            background-color: #5a5a5a;
+        }
+        #result table {
+            border-collapse: collapse;
+            width: 90%;
+            margin: 20px auto;
+            font-size: 1.1rem;
+            font-weight: 400;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #result thead {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        #result th, #result td {
+            padding: 12px 15px;
+        }
+            /* Media query for mobile devices */
+        @media screen and (max-width: 700px) {
+        #result table {
+            width: 100%; /* Full width on smaller screens */
+            font-size: 0.9rem; /* Smaller font size */
+        }
+
+        #result th, #result td {
+            padding: 8px 10px; /* Reduced padding */
+        }
+
+        #result td#ID, #result td#Name, #result td#date {
+            display: block; /* Stack the cells vertically */
+            width: 100%; /* Each cell takes full width */
+            text-align: left;
+        }
+
+        
+
+        #result tbody tr {
+            margin-bottom: 10px; /* Add space between rows */
+            border-bottom: 1px solid #ddd; /* Separate rows visually */
+        }
+        }
+        
+        #result tbody tr:nth-child(odd) {
+            background-color: #cacaca;
+        }
+        
+        #result tbody tr:hover {
+            background-color: #ddd;
+            cursor: pointer;
+        }
+        
+        #result td#ID {
+            width: 10%;
+            text-align: center;
+        }
+        
+        #result td#Name {
+            width: 60%;
+        }
+        
+        #result td#date {
+            width: 30%;
+            text-align: center;
+        }
+        
+        #result th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+        }
+        
+
+        .title {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+        .title h1{
+            font-size: 2rem;
+            font-weight: 600;
+            color: #000;
+            margin: 0;
+        }
+        .faild{
+            border: 1px solid #000;
+            -webkit-box-shadow: 3px 3px 10px -0.5px #000000;
+-moz-box-shadow: 3px 3px 10px -0.5px #000000;
+box-shadow: 3px 3px 10px -0.5px #000000;
+            padding: 1rem;
+            border-radius: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0 auto;
+        }
+        .faild p{
+            margin: 0.5rem;
+        }
+        .faild input{
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid #000;
+            outline: none;
+            margin: 0.5rem;
+        }
+        .faild button{
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #000;
+            outline: none;
+            margin: 0.5rem;
+            background-color: #000;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        #number{
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: #0eb814;
+        }
+        .title i{
+            margin-top: 20px;
+            font-size: 5rem;
+            color: #000;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="title">
+            <i class="fab fa-github"></i>
+            <h1>Welcome</h1>
+            <p>here you can see last repositories in github for you!</p>
+            
+        </div>
+        <div class="faild">
+            <p>Please enter your username in github</p>
+            <input type="text" id="user" placeholder="you user">
+            <button id="btn">Get</button>
+            <p id="number"></p>
+            <div id="result">
+                <table >
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name repositories</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rows">
+                        
+                        
+                
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="api.js"></script>
+</body>
